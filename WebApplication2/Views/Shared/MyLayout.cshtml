@@ -1,8 +1,5 @@
-﻿
-@{
-    Layout = null;
-}
-
+﻿@using WebApplication2.ViewModels
+@model BaseViewModel
 <!DOCTYPE html>
 
 <html>
@@ -19,6 +16,6 @@
     <div>
         @RenderSection("ContentBody")
     </div>
-    @Html.Partial("Footer");
+    @Html.Partial("Footer")
 </body>
 </html>
