@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebApplication2.Models;
+using WebApplication2.ViewModels;
 
 namespace WebApplication2.Controllers
 {
@@ -10,7 +12,11 @@ namespace WebApplication2.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            Session["UserName"] = "Oscar";
+            BaseViewModel baseViewModel = new BaseViewModel();
+            baseViewModel.UserName = "Oscar";
+
+            return View("Index", baseViewModel);
         }
 
         public ActionResult About()
@@ -20,11 +26,5 @@ namespace WebApplication2.Controllers
             return View();
         }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
     }
 }
